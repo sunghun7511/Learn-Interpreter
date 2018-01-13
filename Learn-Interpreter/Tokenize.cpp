@@ -36,10 +36,10 @@ struct KeyWord {
 };
 
 void initChType();
-void helpInit(int start, int last, KeyWord keyword);
+void helpInit(const int start, const int last, const TokenType keyword);
 Token nextToken();
 int nextCh();
-bool is_ope2(int c1, int c2);
+bool is_ope2(const int c1, const int c2);
 TokenType get_Type(const std::string& s);
 
 TokenType ctyp[256];
@@ -182,7 +182,7 @@ int nextCh() {
 	return c;
 }
 
-bool is_ope2(int c1, int c2) {
+bool is_ope2(const int c1, const int c2) {
 	char s[] = "   ";
 
 	if (c1 == '\0' || c2 == '\0') return false;
