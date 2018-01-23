@@ -16,7 +16,7 @@ int stack_ptr;
 
 char polish_out[80];
 
-int main(int argc, char * argv[]) {
+int main_postfix_notation(int argc, char * argv[]) {
 	
 	char buf[MAX_INPUT];
 	int result = 0;

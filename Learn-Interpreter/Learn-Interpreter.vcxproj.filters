@@ -24,6 +24,9 @@
     <ClCompile Include="Tokenize.cpp">
       <Filter>소스 파일\Practice</Filter>
     </ClCompile>
+    <ClCompile Include="PostfixNotation.cpp">
+      <Filter>소스 파일\Practice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomStack.hpp">
