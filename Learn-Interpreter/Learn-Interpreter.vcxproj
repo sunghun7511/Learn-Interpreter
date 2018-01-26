@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="CustomStack.cpp" />
     <ClCompile Include="PostfixNotation.cpp" />
+    <ClCompile Include="RecursiveDescentParsing.cpp" />
     <ClCompile Include="Tokenize.cpp" />
   </ItemGroup>
   <ItemGroup>
