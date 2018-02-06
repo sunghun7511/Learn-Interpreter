@@ -121,6 +121,7 @@
     <ClCompile Include="Tokenize.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common.hpp" />
     <ClInclude Include="CustomStack.hpp" />
     <ClInclude Include="VirtualMemory.hpp" />
   </ItemGroup>
