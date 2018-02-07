@@ -93,7 +93,7 @@ struct Token {
 		text = "";
 		doubleVal = 0.0;
 	}
-	Token(TokenType tdouble d) {
+	Token(TokenType t, double d) {
 		type = t;
 		text = "";
 		doubleVal = d;
@@ -103,7 +103,7 @@ struct Token {
 		text = s;
 		doubleVal = 0.0;
 	}
-	Token(TokenType t const std::string& s, double d) {
+	Token(TokenType t, const std::string& s, double d) {
 		type = t;
 		text = s;
 		doubleVal = d;
@@ -138,7 +138,70 @@ struct SymbolTabel {
 };
 
 struct CodeSet {
+	TokenType		type;
+	const char *	text;
+	double			doubleValue;
+	int				symbolNumb;
+	int				jumpAddrs;
 
+	CodeSet() { clear(); }
+	CodeSet(TokenType t) { clear(); type = t; }
+	CodeSet(TokenType t, double d) { clear(); type = t; doubleValue = d; }
+	CodeSet(TokenType t, const char *s) { clear(); type = t; text = s; }
+	CodeSet(TokenType t, int symbol, int jump) {
+		clear(); type = t; symbolNumb = symbol; jumpAddrs = jump;
+	}
+
+	void clear() {
+		type = Others;
+		text = "";
+		doubleValue = 0.0;
+		jumpAddrs = 0;
+		symbolNumb = -1;
+	}
+};
+
+struct Tobj {
+	char			type;
+	double			d;
+	std::string		s;
+
+	Tobj() { type = '-'; d = 0.0; s = ""; }
+	Tobj(double dt) { type = 'd'; d = 0.0; s = ""; }
+	Tobj(const std::string& st) { type = 's'; d = 0.0; s = st; }
+	Tobj(const char * st) { type = 's'; d = 0.0; s = st; }
+};
+
+class Memory {
+private:
+	std::vector<double> memory;
+public:
+	void auto_resize(int n) {
+		if (n >= (int)memory.size()) {
+			n = (n / 256 + 1) * 256;
+			memory.resize(n);
+		}
+	}
+
+	void set(int addrs, double dt) {
+		memory[addrs] = dt;
+	}
+
+	void add(int addrs, double dt) {
+		memory[addrs] += dt;
+	}
+
+	double get(int addrs) {
+		return memory[addrs];
+	}
+
+	int size() {
+		return (int)memory.size();
+	}
+
+	void resize(unsigned int n) {
+		memory.resize(n);
+	}
 };
 
 #endif
