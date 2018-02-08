@@ -115,14 +115,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code.cpp" />
     <ClCompile Include="CustomStack.cpp" />
+    <ClCompile Include="EntryMain.cpp" />
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Parse.cpp" />
     <ClCompile Include="PostfixNotation.cpp" />
     <ClCompile Include="RecursiveDescentParsing.cpp" />
+    <ClCompile Include="Symbols.cpp" />
+    <ClCompile Include="Token.cpp" />
     <ClCompile Include="Tokenize.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common.hpp" />
+    <ClInclude Include="Common.hpp" />
     <ClInclude Include="CustomStack.hpp" />
+    <ClInclude Include="FunctionPrototypes.hpp" />
     <ClInclude Include="VirtualMemory.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

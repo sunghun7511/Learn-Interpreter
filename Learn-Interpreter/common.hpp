@@ -12,6 +12,7 @@
 #include <cstring>
 #include <cmath>
 #include <cctype>
+#include <cstdarg>
 
 #include "CustomStack.hpp"
 
@@ -81,32 +82,32 @@ enum TokenType {
 struct Token {
 	TokenType		type;
 	std::string		text;
-	double			doubleVal;
+	double			double_val;
 
 	Token() {
 		type = Others;
 		text = "";
-		doubleVal = 0.0;
+		double_val = 0.0;
 	}
 	Token(TokenType t) {
 		type = t;
 		text = "";
-		doubleVal = 0.0;
+		double_val = 0.0;
 	}
 	Token(TokenType t, double d) {
 		type = t;
 		text = "";
-		doubleVal = d;
+		double_val = d;
 	}
 	Token(TokenType t, const std::string& s) {
 		type = t;
 		text = s;
-		doubleVal = 0.0;
+		double_val = 0.0;
 	}
 	Token(TokenType t, const std::string& s, double d) {
 		type = t;
 		text = s;
-		doubleVal = d;
+		double_val = d;
 	}
 };
 
@@ -115,9 +116,9 @@ enum DataType { NON_T, DOUBLE_T };
 
 struct SymbolTabel {
 	std::string		name;
-	SymbolType		nameType;
-	char			dataType;
-	int				arrayLength;
+	SymbolType		name_type;
+	char			data_type;
+	int				array_length;
 	short			args;
 	int				addrs;
 	int				frame;
@@ -128,9 +129,9 @@ struct SymbolTabel {
 
 	void clear() {
 		name = "";
-		nameType = noId;
-		dataType = NON_T;
-		arrayLength = 0;
+		name_type = noId;
+		data_type = NON_T;
+		array_length = 0;
 		args = 0;
 		addrs = 0;
 		frame = 0;
@@ -140,24 +141,24 @@ struct SymbolTabel {
 struct CodeSet {
 	TokenType		type;
 	const char *	text;
-	double			doubleValue;
-	int				symbolNumb;
-	int				jumpAddrs;
+	double			double_value;
+	int				symbol_numb;
+	int				jump_addrs;
 
 	CodeSet() { clear(); }
 	CodeSet(TokenType t) { clear(); type = t; }
-	CodeSet(TokenType t, double d) { clear(); type = t; doubleValue = d; }
+	CodeSet(TokenType t, double d) { clear(); type = t; double_value = d; }
 	CodeSet(TokenType t, const char *s) { clear(); type = t; text = s; }
 	CodeSet(TokenType t, int symbol, int jump) {
-		clear(); type = t; symbolNumb = symbol; jumpAddrs = jump;
+		clear(); type = t; symbol_numb = symbol; jump_addrs = jump;
 	}
 
 	void clear() {
 		type = Others;
 		text = "";
-		doubleValue = 0.0;
-		jumpAddrs = 0;
-		symbolNumb = -1;
+		double_value = 0.0;
+		jump_addrs = 0;
+		symbol_numb = -1;
 	}
 };
 
