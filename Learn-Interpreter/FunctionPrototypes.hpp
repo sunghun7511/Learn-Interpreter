@@ -82,6 +82,6 @@ void DEBUG_stack();
 
 std::string double_to_string(const double d);
 std::string error_message(const std::string& a, const std::string& b);
-void error_exit(Tobj a = "\x01", Tobj b = "\x01", Tobj c = "\x01", Tobj d = "\x01");
+void error_exit(Tobj a, ...);
 
 #endif
