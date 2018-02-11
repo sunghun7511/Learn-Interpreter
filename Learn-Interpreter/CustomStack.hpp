@@ -10,4 +10,5 @@ public:
 	const int size();
 	const bool empty();
 	const double pop();
+	const void pop(const unsigned int amount);
 };

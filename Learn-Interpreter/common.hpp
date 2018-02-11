@@ -114,7 +114,7 @@ struct Token {
 enum SymbolType { noId, varId, funcId, paramId };
 enum DataType { NON_T, DOUBLE_T };
 
-struct SymbolTabel {
+struct SymbolTable {
 	std::string		name;
 	SymbolType		name_type;
 	char			data_type;
@@ -123,7 +123,7 @@ struct SymbolTabel {
 	int				addrs;
 	int				frame;
 
-	SymbolTabel() {
+	SymbolTable() {
 		clear();
 	}
 

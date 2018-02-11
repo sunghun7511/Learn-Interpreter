@@ -25,3 +25,11 @@ const double CustomStack::pop() {
 
 	return temp;
 }
+
+const void CustomStack::pop(const unsigned int amount) {
+	int i;
+
+	for (i = 0; i < amount; i++) {
+		this->pop();
+	}
+}

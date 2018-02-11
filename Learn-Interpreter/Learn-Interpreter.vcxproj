@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Code.cpp" />
+    <ClCompile Include="Core.cpp" />
     <ClCompile Include="CustomStack.cpp" />
     <ClCompile Include="EntryMain.cpp" />
     <ClCompile Include="Misc.cpp" />
